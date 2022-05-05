@@ -1,3 +1,5 @@
+package Problema10;
+
 public class Laboratorio2 {
     public static void main(String[] args){
         System.out.println(btrListSucc("+-", 5));

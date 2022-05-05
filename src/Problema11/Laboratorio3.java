@@ -1,3 +1,5 @@
+package Problema11;
+
 public class Laboratorio3 {
     public static void main(String[] args){
         RoundTable roundTable = new RoundTable(4);

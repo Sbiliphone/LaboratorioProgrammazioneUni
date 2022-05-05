@@ -1,3 +1,5 @@
+package Problema10;
+
 public class StringSList {
     public static final StringSList NULL_SLIST = new StringSList();
 
@@ -11,7 +13,7 @@ public class StringSList {
         rest = null;
     }
 
-    public StringSList( String e, StringSList il ) {
+    public StringSList(String e, StringSList il ) {
         empty = false;
         first = e;
         rest = il;

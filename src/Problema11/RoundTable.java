@@ -1,3 +1,5 @@
+package Problema11;
+
 public class RoundTable {
     private final int num;                  // numero di cavalieri a tavola
     private final int jug;                  // etichetta del cavaliere con la brocca
@@ -12,7 +14,7 @@ public class RoundTable {
         tail = IntSList.NULL_INTLIST;
     }
 
-    private RoundTable( int n, int j, IntSList h, IntSList t ) {
+    private RoundTable(int n, int j, IntSList h, IntSList t ) {
 
         num = n;
         jug = j;
@@ -73,7 +75,7 @@ public class RoundTable {
 
     // ----- Procedura interna di supporto (private!)
 
-    private static IntSList range( int inf, int sup ) {
+    private static IntSList range(int inf, int sup ) {
 
         if ( inf > sup ) {
             return IntSList.NULL_INTLIST;
@@ -97,6 +99,6 @@ public class RoundTable {
     public IntSList getTail() {
         return tail;
     }
-}  // class RoundTable
+}  // class Problema11.RoundTable
 
 

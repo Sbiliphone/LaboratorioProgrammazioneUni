@@ -1,15 +1,17 @@
+package Problema12;
 
+import Problema12.Board;
 /*
  * Rompicapo delle "n regine"
  *
  * Ultimo aggiornamento: 12/04/2018
  *
  *
- * Dato astratto "configurazione della scacchiera":  Board
+ * Dato astratto "configurazione della scacchiera":  Problema12.Board
  *
  * Operazioni:
  *
- *   new Board( int n )           :  costruttore (scacchiera vuota)
+ *   new Problema12.Board( int n )           :  costruttore (scacchiera vuota)
  *
  *   size()                       :  int
  *
@@ -17,14 +19,14 @@
  *
  *   underAttack( int i, int j )  :  boolean
  *
- *   addQueen( int i, int j )     :  Board
+ *   addQueen( int i, int j )     :  Problema12.Board
  *
  *   arrangement()                :  String
  *
  *
- * Board b;
+ * Problema12.Board b;
  *
- *   new Board(n)           costruttore della scacchiera n x n vuota;
+ *   new Problema12.Board(n)           costruttore della scacchiera n x n vuota;
  *   b.size()               dimensione n della scacchiera b;
  *   b.queensOn()           numero di regine collocate nella scacchiera b;
  *   b.underAttack(i,j)     la posizione <i,j> e' minacciata?
@@ -37,7 +39,24 @@
 
 
 public class Queens {
+    //static Scanner in = new Scanner(System.in);
 
+    public static void main( String args[] ) {
+
+        //int n = in.nextInt();
+        //System.out.println(numberOfSolutions(n));
+        // esempi
+        System.out.println(numberOfSolutions(1)); // 1
+        System.out.println(numberOfSolutions(2)); // 0
+        System.out.println(numberOfSolutions(3)); // 0
+        System.out.println(numberOfSolutions(4)); // 2
+        System.out.println(numberOfSolutions(5)); // 10
+        System.out.println(numberOfSolutions(6)); // 4
+        System.out.println(numberOfSolutions(7)); // 40
+        System.out.println(numberOfSolutions(8)); // 92
+        System.out.println(numberOfSolutions(9)); // 352
+        System.out.println(numberOfSolutions(10)); // 724
+    }
 
     /*
      * I. Numero di soluzioni:
@@ -51,7 +70,7 @@ public class Queens {
      * cui si puo' completare la disposizione delle regine a partire
      * da una scacchiera n x n inizialmente vuota
      *
-     *   numberOfCompletions( new Board(n) )
+     *   numberOfCompletions( new Problema12.Board(n) )
      */
 
     public static int numberOfSolutions( int n ) {
@@ -95,11 +114,8 @@ public class Queens {
         int q = b.queensOn();
 
         if ( q == n ) {
-
             return 1;
-
         } else {
-
             int i = q + 1;
             int count = 0;
 
@@ -113,12 +129,4 @@ public class Queens {
     }
 
 
-    public static void main( String args[] ) {
-
-        int n = Integer.parseInt( args[0] );
-
-        System.out.println( numberOfSolutions(n) );
-    }
-
-
-}  // class Queens
+}  // class Problema12.Queens

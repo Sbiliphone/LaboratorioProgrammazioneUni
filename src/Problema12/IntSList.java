@@ -1,3 +1,5 @@
+package Problema12;
+
 public class IntSList {                    // Scheme-Like Lists of int
 
 
@@ -22,7 +24,7 @@ public class IntSList {                    // Scheme-Like Lists of int
         rest = null;
     }
 
-    public IntSList( int e, IntSList il ) {  // creazione di una lista non vuota:
+    public IntSList(int e, IntSList il ) {  // creazione di una lista non vuota:
         // Scheme: cons
         empty = false;
         first = e;
