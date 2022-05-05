@@ -11,7 +11,7 @@ public class QueensGUI {
  */
 	
 	public static void main(String[] args) {
-		showGUI(5);
+		showGUI(10);
 		//queens.ChessboardView view = new queens.ChessboardView( 8 );
 		//view.setQueens( " b1 e2 g3 d4 a5 h6 f7 c8 " );
 	}
