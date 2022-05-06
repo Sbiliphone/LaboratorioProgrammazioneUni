@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/queens.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/Problema13/queens.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
