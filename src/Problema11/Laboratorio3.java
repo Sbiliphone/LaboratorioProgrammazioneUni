@@ -2,20 +2,19 @@ package Problema11;
 
 public class Laboratorio3 {
     public static void main(String[] args){
-        RoundTable roundTable = new RoundTable(4);
-        roundTable.serveNeighbour();
-        roundTable.passJug();
-        System.out.println(roundTable.knightWithJug());
-        //josephus(7);
+        RoundTable roundTable = new RoundTable(24);
+        //roundTable.serveNeighbour();
+        //roundTable.passJug();
+        //System.out.println(roundTable.knightWithJug());
+        System.out.println(josephus(roundTable));
     }
 
-    private static IntSList josephus(int num){
-        RoundTable roundTable = new RoundTable(num);
+    private static IntSList josephus(RoundTable roundTable){
         while (roundTable.numberOfKnights()>2){
             System.out.println("inizio: " + roundTable.knightWithJug());
-            roundTable.passJug();
-            roundTable.serveNeighbour();
-            roundTable.passJug();
+            roundTable = roundTable.passJug();
+            roundTable = roundTable.serveNeighbour();
+            roundTable.dopoUscitaCavaliere();
             System.out.println("fine: " + roundTable.knightWithJug());
         }
         return roundTable.getTail();

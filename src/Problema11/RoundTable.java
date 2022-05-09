@@ -45,7 +45,7 @@ public class RoundTable {
 
     public RoundTable serveNeighbour() {     // serve il commensale vicino a sinistra:
         // il commensale servito lascia la tavola
-        if ( num < 2 ) {                       // meno di due commensali
+        if ( num == 1 ) {                       // meno di due commensali
             return this;
         } else if ( head.isNull() ) {          // (*)
             IntSList rev = tail.reverse();
@@ -62,14 +62,21 @@ public class RoundTable {
 
     public RoundTable passJug() {            // passa la brocca al commensale vicino
         // (a sinistra)
-        if ( num < 2 ) {                       // meno di due commensali
+        if ( num == 1 ) {                       // meno di due commensali
             return this;
         } else if ( head.isNull() ) {          // (*)
-            IntSList rev = ( tail.cons(jug) ).reverse();
+            IntSList rev = tail.reverse();
             return new RoundTable( num, rev.car(), rev.cdr(), IntSList.NULL_INTLIST );
         } else {                               // (**)
             return new RoundTable( num, head.car(), head.cdr(), tail.cons(jug) );
         }
+    }
+
+    public RoundTable dopoUscitaCavaliere() {                // tutti i passi da una situazione a quella che segue immediatamente l'usicta
+
+        RoundTable nuovaTav = serveNeighbour();        // creo una prima tavola rotonda ottenuta facendo uscire un cavaliere basata sulla situazione attuale
+
+        return nuovaTav.passJug();             // creo una seconda tavola rotonda ottenuta passando la brocca basata sulla situazione intermedia data dalla tavoila creata qui sopra
     }
 
 
