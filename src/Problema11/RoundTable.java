@@ -36,6 +36,10 @@ public class RoundTable {
         return jug;
     }
 
+    public IntSList servingKnights (){
+        return new IntSList(this.head.car(), new IntSList()).cons(this.knightWithJug());
+    }
+
 
     // ----- Metodi del protocollo: generazione di configurazioni successive
 
@@ -44,14 +48,14 @@ public class RoundTable {
     //                                   -->  n-1: c_1 (c_3, ..., c_j) (c_k, ..., c_j+1)
 
     public RoundTable serveNeighbour() {     // serve il commensale vicino a sinistra:
-        // il commensale servito lascia la tavola
-        if ( num == 1 ) {                       // meno di due commensali
+        if(num<3){
             return this;
-        } else if ( head.isNull() ) {          // (*)
-            IntSList rev = tail.reverse();
-            return new RoundTable( num-1, jug, rev.cdr(), IntSList.NULL_INTLIST );
-        } else {                               // (**)
-            return new RoundTable( num-1, jug, head.cdr(), tail );
+        }else if(head.length() == 1){
+            return new RoundTable(num-1, jug, new IntSList(head.car(), head.append(tail.reverse()).cdr()), IntSList.NULL_INTLIST);
+        }else if(head.isNull()){
+            return new RoundTable(num-1, jug, new IntSList(tail.reverse().car(), new IntSList()), IntSList.NULL_INTLIST);
+        }else{
+            return new RoundTable(num-1, jug, new IntSList(head.car(), head.cdr().cdr()), tail);
         }
     }
 
@@ -61,22 +65,15 @@ public class RoundTable {
     //                                   -->  n: c_2 (c_3, ..., c_j) (c_1, c_k, ..., c_j+1)
 
     public RoundTable passJug() {            // passa la brocca al commensale vicino
-        // (a sinistra)
-        if ( num == 1 ) {                       // meno di due commensali
+        if ( num < 3 ) {                       // meno di due commensali
             return this;
         } else if ( head.isNull() ) {          // (*)
-            IntSList rev = tail.reverse();
-            return new RoundTable( num, rev.car(), rev.cdr(), IntSList.NULL_INTLIST );
-        } else {                               // (**)
-            return new RoundTable( num, head.car(), head.cdr(), tail.cons(jug) );
+            return new RoundTable(num, tail.reverse().car(), new IntSList(tail.reverse().cdr().car(), new IntSList()), IntSList.NULL_INTLIST);
+        }else if(head.length() == 1) {
+            return new RoundTable(num, tail.reverse().car(), new IntSList(tail.cdr().car(), new IntSList()), servingKnights().append(tail));
+        }else {                               // (**)
+            return new RoundTable( num, head.cdr().cdr().car(), head.cdr().cdr(), servingKnights().append(tail));
         }
-    }
-
-    public RoundTable dopoUscitaCavaliere() {                // tutti i passi da una situazione a quella che segue immediatamente l'usicta
-
-        RoundTable nuovaTav = serveNeighbour();        // creo una prima tavola rotonda ottenuta facendo uscire un cavaliere basata sulla situazione attuale
-
-        return nuovaTav.passJug();             // creo una seconda tavola rotonda ottenuta passando la brocca basata sulla situazione intermedia data dalla tavoila creata qui sopra
     }
 
 
