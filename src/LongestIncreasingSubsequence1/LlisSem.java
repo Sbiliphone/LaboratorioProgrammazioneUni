@@ -12,7 +12,7 @@ public class LlisSem {
 	private static final int UNKNOWN = -1;
     
 	// con vettore
-    public static int llisSemplice(int[] s) {
+    public static int llisSem(int[] s) {
         int[] mem = new int[s.length+1];
     	// inizializzo tutto il vettore mem a -1
     	for(int i = 0; i < mem.length; i++) {
