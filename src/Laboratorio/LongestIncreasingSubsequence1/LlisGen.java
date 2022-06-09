@@ -1,4 +1,4 @@
-package LongestIncreasingSubsequence1;
+package Laboratorio.LongestIncreasingSubsequence1;
 public class LlisGen {
 	
 	public static void main(String[] args) {

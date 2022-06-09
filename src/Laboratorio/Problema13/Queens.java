@@ -1,4 +1,4 @@
-package Problema13;
+package Laboratorio.Problema13;
 import java.util.Scanner;
 
 

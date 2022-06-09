@@ -1,4 +1,4 @@
-package Problema11;
+package Laboratorio.Problema11;
 
 public class IntSList {                    // Scheme-Like Lists of int
 

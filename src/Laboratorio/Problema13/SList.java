@@ -1,4 +1,4 @@
-package Problema13;
+package Laboratorio.Problema13;
 /*
  * Classe SList<T>: Scheme-like Lists di elementi di tipo T
  *
