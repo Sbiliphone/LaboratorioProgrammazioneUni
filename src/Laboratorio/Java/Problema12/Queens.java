@@ -1,4 +1,4 @@
-package Laboratorio.Problema12;
+package Laboratorio.Java.Problema12;
 
 /*
  * Rompicapo delle "n regine"
@@ -6,11 +6,11 @@ package Laboratorio.Problema12;
  * Ultimo aggiornamento: 12/04/2018
  *
  *
- * Dato astratto "configurazione della scacchiera":  Laboratorio.Problema12.Board
+ * Dato astratto "configurazione della scacchiera":  Laboratorio.Java.Problema12.Board
  *
  * Operazioni:
  *
- *   new Laboratorio.Problema12.Board( int n )           :  costruttore (scacchiera vuota)
+ *   new Laboratorio.Java.Problema12.Board( int n )           :  costruttore (scacchiera vuota)
  *
  *   size()                       :  int
  *
@@ -18,14 +18,14 @@ package Laboratorio.Problema12;
  *
  *   underAttack( int i, int j )  :  boolean
  *
- *   addQueen( int i, int j )     :  Laboratorio.Problema12.Board
+ *   addQueen( int i, int j )     :  Laboratorio.Java.Problema12.Board
  *
  *   arrangement()                :  String
  *
  *
- * Laboratorio.Problema12.Board b;
+ * Laboratorio.Java.Problema12.Board b;
  *
- *   new Laboratorio.Problema12.Board(n)           costruttore della scacchiera n x n vuota;
+ *   new Laboratorio.Java.Problema12.Board(n)           costruttore della scacchiera n x n vuota;
  *   b.size()               dimensione n della scacchiera b;
  *   b.queensOn()           numero di regine collocate nella scacchiera b;
  *   b.underAttack(i,j)     la posizione <i,j> e' minacciata?
@@ -69,7 +69,7 @@ public class Queens {
      * cui si puo' completare la disposizione delle regine a partire
      * da una scacchiera n x n inizialmente vuota
      *
-     *   numberOfCompletions( new Laboratorio.Problema12.Board(n) )
+     *   numberOfCompletions( new Laboratorio.Java.Problema12.Board(n) )
      */
 
     public static int numberOfSolutions( int n ) {
@@ -128,4 +128,4 @@ public class Queens {
     }
 
 
-}  // class Laboratorio.Problema12.Queens
+}  // class Laboratorio.Java.Problema12.Queens

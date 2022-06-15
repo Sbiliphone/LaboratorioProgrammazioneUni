@@ -1,4 +1,4 @@
-package Laboratorio.Problema13;
+package Laboratorio.Java.Problema13;
 
 // Rompicapo delle "n regine" (20/04/12)
 

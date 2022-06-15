@@ -1,4 +1,4 @@
-package Laboratorio.LongestIncreasingSubsequence1;
+package Laboratorio.Java.LongestIncreasingSubsequence1;
 
 public class Llis {
 	

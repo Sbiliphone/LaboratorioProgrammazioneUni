@@ -1,4 +1,4 @@
-package Laboratorio.Problema10;
+package Laboratorio.Java.Problema10;
 
 public class StringSList {
     public static final StringSList NULL_SLIST = new StringSList();

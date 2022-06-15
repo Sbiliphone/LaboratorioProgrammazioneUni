@@ -1,4 +1,4 @@
-package Laboratorio.LongestIncreasingSubsequence2;
+package Laboratorio.Java.LongestIncreasingSubsequence2;
 
 import java.util.Arrays;
 

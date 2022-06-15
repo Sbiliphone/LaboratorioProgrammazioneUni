@@ -1,9 +1,9 @@
-package Laboratorio.Problema12;
+package Laboratorio.Java.Problema12;
 /*
  *
  * Protocollo:
  *
- *   b = new Laboratorio.Problema12.Board( n )           :  creazione di una scacchiera nxn vuota
+ *   b = new Laboratorio.Java.Problema12.Board( n )           :  creazione di una scacchiera nxn vuota
  *
  *   b.size()                     :  dimensione della scacchiera
  *

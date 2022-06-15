@@ -1,4 +1,4 @@
-package Laboratorio.Problema13;
+package Laboratorio.Java.Problema13;
 /*
  * Classe SList<T>: Scheme-like Lists di elementi di tipo T
  *

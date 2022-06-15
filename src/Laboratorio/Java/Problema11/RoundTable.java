@@ -1,4 +1,4 @@
-package Laboratorio.Problema11;
+package Laboratorio.Java.Problema11;
 
 public class RoundTable {
     private final int num;                  // numero di cavalieri a tavola
@@ -122,6 +122,6 @@ public class RoundTable {
     public IntSList getTail() {
         return tail;
     }
-}  // class Laboratorio.Problema11.RoundTable
+}  // class Laboratorio.Java.Problema11.RoundTable
 
 

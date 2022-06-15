@@ -1,4 +1,4 @@
-package Laboratorio.Problema10;
+package Laboratorio.Java.Problema10;
 
 public class Laboratorio1 {
     public static void main(String[] args){
