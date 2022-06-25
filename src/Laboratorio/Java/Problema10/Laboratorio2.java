@@ -12,5 +12,4 @@ public class Laboratorio2 {
         }
         return list.reverse();
     }
-
 }
