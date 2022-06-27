@@ -59,34 +59,31 @@ public class Puzzle {
 	}
 	
 	public int[] moveTo(int i, int j) {
-		try {
-			if(tavola[i+1][j]=="") {
-				return new int[] {i+1, j};
-			}
-		}catch(ArrayIndexOutOfBoundsException e) {
-			
+		System.out.println("i: " + i);
+		System.out.println("j: " + j);
+		System.out.println(dim);
+		if(i+1<dim &&tavola[i+1][j]=="") {
+			return new int[] {i+1, j};
+		}else {
+
 		}
-		try {
-			if(tavola[i-1][j]=="") {
-				return new int[] {i-1, j};
-			}
-		}catch(ArrayIndexOutOfBoundsException e) {
-			
+		if(i-1>=0&&tavola[i-1][j]=="") {
+			return new int[] {i-1, j};
+		}else{
+
 		}
-		try {
-			if(tavola[i][j+1]=="") {
-				return new int[] {i, j+1};
-			}
-		}catch(ArrayIndexOutOfBoundsException e) {
-			
+
+		if(j+1<dim&&tavola[i][j+1]=="") {
+			return new int[] {i, j+1};
+		}else{
+
 		}
-		try {
-			if(tavola[i][j-1]=="") {
-				return new int[] {i, j-1};
-			}
-		}catch(ArrayIndexOutOfBoundsException e) {
-			
+		if(j-1>=0&&tavola[i][j-1]=="") {
+			return new int[] {i, j-1};
+		}else{
+
 		}
+
 		return null;
 	}
 
