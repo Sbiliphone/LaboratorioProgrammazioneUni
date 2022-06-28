@@ -64,26 +64,17 @@ public class Puzzle {
 		System.out.println(dim);
 		if(i+1<dim &&tavola[i+1][j]=="") {
 			return new int[] {i+1, j};
-		}else {
-
 		}
 		if(i-1>=0&&tavola[i-1][j]=="") {
 			return new int[] {i-1, j};
-		}else{
-
 		}
 
 		if(j+1<dim&&tavola[i][j+1]=="") {
 			return new int[] {i, j+1};
-		}else{
-
 		}
 		if(j-1>=0&&tavola[i][j-1]=="") {
 			return new int[] {i, j-1};
-		}else{
-
 		}
-
 		return null;
 	}
 
