@@ -49,16 +49,16 @@ public class RoundTable {
 
     public RoundTable serveNeighbour() {     // serve il commensale vicino a sinistra:
         if(num<3){
-            System.out.println("S < 3");
+            //System.out.println("S < 3");
             return this;
         }else if(head.length() == 1){
-            System.out.println("S == 1");
+            //System.out.println("S == 1");
             return new RoundTable(num-1, jug, new IntSList(head.car(), new IntSList(tail.reverse().car(), IntSList.NULL_INTLIST)), IntSList.NULL_INTLIST);
         }else if(head.isNull()){
-            System.out.println("S head is null");
+            //System.out.println("S head is null");
             return new RoundTable(num-1, jug, new IntSList(tail.car(), new IntSList()), IntSList.NULL_INTLIST);
         }else{
-            System.out.println("S else");
+            //System.out.println("S else");
             return new RoundTable(num-1, jug, new IntSList(head.car(), head.cdr().cdr()), tail);
         }
     }
@@ -70,25 +70,25 @@ public class RoundTable {
 
     public RoundTable passJug() {            // passa la brocca al commensale vicino
         if ( num < 3 ) {                       // meno di due commensali
-            System.out.println("P < 3");
+            //System.out.println("P < 3");
             return this;
         } else if ( head.isNull() ) {
             if(tail.length()<3){
-                System.out.println(" P head is null < 3");
+                //System.out.println(" P head is null < 3");
                 return new RoundTable(num, knightWithJug(), new IntSList(tail.car(), IntSList.NULL_INTLIST), IntSList.NULL_INTLIST);
             }else {
-                System.out.println(" P head is null > 3");
+                //System.out.println(" P head is null > 3");
                 return new RoundTable(num, tail.car(), new IntSList(tail.reverse().cdr().car(), new IntSList()), IntSList.NULL_INTLIST);
             }
         }else if(head.length() == 1) {
-            System.out.println("P == 1");
+            //System.out.println("P == 1");
             return new RoundTable(num, tail.car(), new IntSList(tail.cdr().car(), servingKnights()), IntSList.NULL_INTLIST);
         } else {
             if (tail.isNull()){
-                System.out.println("P else");
+                //System.out.println("P else");
                 return new RoundTable( num, head.cdr().car(), head.cdr().cdr(), servingKnights().append(tail));
             }else{
-                System.out.println("P else");
+                //System.out.println("P else");
                 return new RoundTable( num, head.cdr().car(), head.cdr().cdr().append(new IntSList(tail.car(), new IntSList(tail.cdr().car(), servingKnights()))), IntSList.NULL_INTLIST);
             }
 
